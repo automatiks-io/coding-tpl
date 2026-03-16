@@ -47,6 +47,12 @@ Run these checks. If ANY fail, tell the user exactly how to fix it and STOP. Do 
 3. **Dependencies installed:**
    Check if `node_modules/` exists. If not: "Run `npm install` first."
 
+4. **terminal-notifier installed** (macOS notifications):
+   ```bash
+   which terminal-notifier
+   ```
+   If not found: "terminal-notifier is not installed. Run: `brew install terminal-notifier` — this enables macOS notifications when Claude needs your attention."
+
 All prerequisites must pass before continuing.
 
 ### Phase 2: Understand the Project
