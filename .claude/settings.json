@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code braucht deine Aufmerksamkeit\" with title \"Claude Code\" sound name \"Submarine\"'"
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Input benötigt' -message 'Claude Code braucht deine Aufmerksamkeit' -sound Submarine -activate com.microsoft.VSCode"
           }
         ]
       }
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code ist fertig\" with title \"Claude Code\" sound name \"Glass\"'"
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Fertig' -message 'Claude Code ist fertig' -sound Glass -activate com.microsoft.VSCode"
           }
         ]
       }
