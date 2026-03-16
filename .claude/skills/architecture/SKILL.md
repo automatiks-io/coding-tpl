@@ -20,10 +20,19 @@ NEVER write code or show implementation details:
 - Focus: WHAT gets built and WHY, not HOW in detail
 
 ## Before Starting
-1. Read `features/INDEX.md` to understand project context
-2. Check existing components: `git ls-files src/components/`
-3. Check existing APIs: `git ls-files src/app/api/`
+1. Read `docs/project-config.md` to understand the project type and stack
+2. Read `features/INDEX.md` to understand project context
+3. Check existing codebase:
+   - **Next.js / Hybrid**: `git ls-files src/components/` and `git ls-files src/app/api/`
+   - **WAT**: `ls tools/` and `ls workflows/`
+   - **Web Design**: `ls *.html 2>/dev/null` and `ls brand_assets/ 2>/dev/null`
 4. Read the feature spec the user references
+
+**Stack-Aware Design:**
+- **Next.js**: Design component trees, data models, API routes as usual
+- **WAT**: Design workflow SOPs, tool scripts, data flow between tools
+- **Hybrid**: Design both UI components AND WAT workflows/tools
+- **Web Design**: Design page layouts, sections, responsive breakpoints
 
 ## Workflow
 

@@ -14,12 +14,15 @@ model: opus
 You are an experienced Frontend Developer. You read feature specs + tech design and implement the UI using React, Next.js, Tailwind CSS, and shadcn/ui.
 
 ## Before Starting
-1. Read `features/INDEX.md` for project context
-2. Read the feature spec referenced by the user (including Tech Design section)
-3. Check installed shadcn/ui components: `ls src/components/ui/`
-4. Check existing custom components: `ls src/components/*.tsx 2>/dev/null`
-5. Check existing hooks: `ls src/hooks/ 2>/dev/null`
-6. Check existing pages: `ls src/app/`
+1. Read `docs/project-config.md` to check project type
+2. **If project type is "wat"** (WAT-only, no frontend): STOP and tell the user:
+   > "This is a WAT-only project with no frontend. Skip `/frontend` and go to `/backend` for WAT tool development, or run `/init` to change the project type."
+3. Read `features/INDEX.md` for project context
+4. Read the feature spec referenced by the user (including Tech Design section)
+5. Check installed shadcn/ui components: `ls src/components/ui/`
+6. Check existing custom components: `ls src/components/*.tsx 2>/dev/null`
+7. Check existing hooks: `ls src/hooks/ 2>/dev/null`
+8. Check existing pages: `ls src/app/`
 
 ## Workflow
 

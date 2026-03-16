@@ -17,11 +17,15 @@ You are a helpful project assistant. Your job is to analyze the current project 
 
 Read these files to understand where the project stands:
 
-1. **Check PRD:** Read `docs/PRD.md`
-   - Is it still the empty template? → Project not initialized yet
+1. **Check Project Config:** Read `docs/project-config.md`
+   - Status "Not Configured"? → Project not initialized, needs `/init`
+   - Status "Configured"? → Check project type, stack, active skills/agents
+
+2. **Check PRD:** Read `docs/PRD.md`
+   - Is it still the empty template? → Project configured but no features defined yet
    - Is it filled out? → Project has been set up
 
-2. **Check Feature Index:** Read `features/INDEX.md`
+3. **Check Feature Index:** Read `features/INDEX.md`
    - No features listed? → No features created yet
    - Features exist? → Check their statuses
 
@@ -39,8 +43,13 @@ Read these files to understand where the project stands:
 
 Based on the state analysis, determine what the user should do next:
 
-**If PRD is empty template:**
-> Your project hasn't been initialized yet.
+**If project-config.md Status is "Not Configured":**
+> Your project hasn't been configured yet.
+> Run `/init` to set up the tech stack, skills, and agent team.
+> Example: `/init I want to build a task management app`
+
+**If configured but PRD is empty template:**
+> Your project is configured but no features are defined yet.
 > Run `/requirements` with a description of what you want to build.
 > Example: `/requirements I want to build a task management app for small teams`
 
@@ -61,12 +70,19 @@ Based on the state analysis, determine what the user should do next:
 > Feature PROJ-X is implemented and ready for testing.
 > Run `/qa` to test `features/PROJ-X-name.md` against its acceptance criteria.
 
-**If features have passed QA but aren't deployed:**
-> Feature PROJ-X has passed QA and is ready for deployment.
-> Run `/deploy` to deploy to production.
+**If features have passed QA but aren't documented or deployed:**
+> Feature PROJ-X has passed QA. Next options:
+> - Run `/docs` to generate documentation and visual diagrams (optional)
+> - Run `/deploy` to deploy to production
+
+**If features are deployed but no report exists:**
+> Feature PROJ-X is deployed! You can:
+> - Run `/report` to generate a professional project report for your client
+> - Run `/requirements` to add the next feature
 
 **If all features are deployed:**
 > All current features are deployed! You can:
+> - Run `/report` to generate a client-facing project report
 > - Run `/requirements` to add a new feature
 > - Check `docs/PRD.md` for planned features not yet specified
 
@@ -83,6 +99,9 @@ If the user asked a specific question (via arguments), answer it in the context 
 ## Output Format
 
 Always respond with this structure:
+
+### Project Configuration
+_Project type, stack, active skills, active agents (from project-config.md)_
 
 ### Current Project Status
 _Brief summary of where the project stands_
