@@ -48,6 +48,9 @@ docs/
 7. `/deploy` - Deploy to production
 8. `/report` - Generate client-facing project report with HTML export (optional)
 
+**Autonomous mode:**
+- `/orchestrate PROJ-X` - Let Agent Teams handle the full pipeline (architecture → frontend → backend → QA → docs) autonomously
+
 **Utility skills:**
 - `/help` - See current project status and next steps
 - `/init` (re-run) - Add skills, integrations, or change config

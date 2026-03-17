@@ -63,8 +63,8 @@ Based on the state analysis, determine what the user should do next:
 
 **If features have Tech Design but no implementation:**
 > Feature PROJ-X has a tech design and is ready for implementation.
-> Run `/frontend` to build the UI for `features/PROJ-X-name.md`
-> (If backend is needed, run `/backend` after frontend is done)
+> **Option A (manual):** Run `/frontend` to build the UI, then `/backend`, then `/qa`
+> **Option B (autonomous):** Run `/orchestrate PROJ-X` to let Agent Teams handle the full pipeline automatically
 
 **If features are implemented but no QA:**
 > Feature PROJ-X is implemented and ready for testing.
