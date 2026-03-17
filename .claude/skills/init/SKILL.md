@@ -32,22 +32,39 @@ You do NOT define features or write code — that's for `/requirements` and the 
 
 Run these checks. If ANY fail, tell the user exactly how to fix it and STOP. Do not proceed.
 
-1. **Git repo with remote:**
+1. **Correct project directory:**
+   ```bash
+   ls CLAUDE.md docs/project-config.md 2>/dev/null
+   ```
+   If `CLAUDE.md` is NOT found in the current directory, the user likely opened a parent folder and cloned the template into a subfolder. Check:
+   ```bash
+   ls */CLAUDE.md 2>/dev/null
+   ```
+   If found in a subfolder, tell the user:
+   > "It looks like the template is in the subfolder `[folder-name]/`, but VS Code is opened in the parent directory. Please close this window and reopen VS Code in the correct folder:
+   > ```bash
+   > cd [folder-name] && code .
+   > ```
+   > Then run `/init` again."
+
+   Do NOT proceed from the wrong directory — skills, rules, and agents won't work correctly.
+
+2. **Git repo with remote:**
    ```bash
    git remote -v
    ```
    If no remote: "No git remote configured. Run: `git remote add origin <your-repo-url>` then `git push -u origin main`"
 
-2. **Node.js available:**
+3. **Node.js available:**
    ```bash
    node --version
    ```
    If fails: "Node.js is not installed. Install it from https://nodejs.org"
 
-3. **Dependencies installed:**
+4. **Dependencies installed:**
    Check if `node_modules/` exists. If not: "Run `npm install` first."
 
-4. **terminal-notifier installed** (macOS notifications):
+5. **terminal-notifier installed** (macOS notifications):
    ```bash
    which terminal-notifier
    ```
@@ -294,7 +311,7 @@ chore: Extend project configuration — [what was added/changed]
 ## Checklist Before Completion
 
 ### Init Mode
-- [ ] All prerequisites passed (git remote, node, dependencies)
+- [ ] All prerequisites passed (correct directory, git remote, node, dependencies, terminal-notifier)
 - [ ] User has answered all project questions
 - [ ] `docs/project-config.md` fully filled out with Status: Configured
 - [ ] Directory structure created for chosen project type
